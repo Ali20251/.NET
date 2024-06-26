@@ -1,0 +1,35 @@
+﻿@model List<CryptoPriceApp.Models.CryptoPrice>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Crypto Prices</title>
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+</head>
+<body>
+<div class="container">
+    <h1>Bitcoin Price</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Time</th>
+            <th>Price (CHF)</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var price in Model)
+        {
+            <tr>
+                <td>@price.Time</td>
+                <td>@price.Price</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <canvas id="cryptoChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="~/js/site.js"></script>
+</body>
+</html>
